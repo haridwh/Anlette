@@ -3,11 +3,9 @@ package com.example.skday.anlette;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.graphics.Palette;
-import android.util.Log;
 import android.view.View;
 
 import com.example.skday.anlette.databinding.ActivityMainBinding;
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         binding.setMain(this);
+
         binding.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
