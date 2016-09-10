@@ -45,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onGenerated(Palette palette) {
                     Palette.Swatch swatch = palette.getVibrantSwatch();
+                    ColorUtils colorUtils = new ColorUtils();
                     String hexValue;
+                    int hex;
                     if (swatch != null){
                         binding.palette1.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette1.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette1.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette1.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette1.setVisibility(View.GONE);
@@ -59,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.palette2.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette2.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette2.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette2.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette2.setVisibility(View.GONE);
@@ -69,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.palette3.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette3.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette3.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette3.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette3.setVisibility(View.GONE);
@@ -79,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.palette4.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette4.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette4.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette4.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette4.setVisibility(View.GONE);
@@ -89,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.palette5.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette5.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette5.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette5.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette5.setVisibility(View.GONE);
@@ -99,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.palette6.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.textPalette6.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.textPalette6.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.textPalette6.setTextColor(swatch.getTitleTextColor());
                     }else {
                         binding.palette6.setVisibility(View.GONE);
@@ -108,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
                     if (swatch != null){
                         binding.paletteDominan.setBackgroundColor(swatch.getRgb());
                         hexValue = "#"+Integer.toHexString(swatch.getRgb()).substring(2);
-                        binding.paletteDominan.setText(hexValue);
+                        hex = Integer.parseInt(Integer.toHexString(swatch.getRgb()).substring(2),16);
+                        binding.paletteDominan.setText(hexValue+"\n"+colorUtils.getColorNameFromHex(hex));
                         binding.paletteDominan.setTextColor(swatch.getTitleTextColor());
                     }
                 }

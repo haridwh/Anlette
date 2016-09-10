@@ -52,25 +52,28 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
-                            android:gravity="center" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/palette2"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
@@ -78,12 +81,13 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
@@ -91,12 +95,13 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
@@ -104,12 +109,13 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
@@ -117,12 +123,13 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
-                        <TextView
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <com.example.skday.anlette.VerticalTextView
+                            android:padding="8dp"
                             android:id="@+id/text_palette6"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:rotation="-90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:gravity="center"/>
                     </LinearLayout>
 
