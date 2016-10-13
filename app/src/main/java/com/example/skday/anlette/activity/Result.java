@@ -1,21 +1,24 @@
-package com.example.skday.anlette;
+package com.example.skday.anlette.activity;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.graphics.Palette;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.skday.anlette.ColorUtils;
+import com.example.skday.anlette.R;
+import com.example.skday.anlette.base.BaseActivity;
 import com.example.skday.anlette.databinding.ActivityMainBinding;
+import com.example.skday.anlette.databinding.ActivityResultBinding;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,27 +26,25 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class Result extends BaseActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityResultBinding binding;
     private static final int CAMERA_REQUEST = 1888;
     private Bitmap image;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        binding.setMain(this);
-        binding.image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-            }
-        });
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_result);
+        binding.setResult(this);
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setTitle("Pallet");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getIntent().getExtras().getBoolean("Take")){
+            Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent, CAMERA_REQUEST);
+        }
     }
 
     @Override
@@ -140,6 +141,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.save, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.btn_save){
+            save();
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             image = (Bitmap) data.getExtras().get("data");
@@ -147,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void save(View view){
+    public void save(){
         binding.linearLayout.setDrawingCacheEnabled(true);
         storeImage(binding.linearLayout.getDrawingCache());
         binding.linearLayout.destroyDrawingCache();

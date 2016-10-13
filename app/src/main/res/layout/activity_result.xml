@@ -34,13 +34,14 @@
             android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@android:color/white">
 
             <LinearLayout
+                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.70"
                 android:orientation="vertical">
 
                 <ImageView
@@ -60,6 +61,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette1"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -75,6 +77,7 @@
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette2"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -89,6 +92,7 @@
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette3"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -103,6 +107,7 @@
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette4"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -117,6 +122,7 @@
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette5"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -131,6 +137,7 @@
                             android:gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_margin="2dp"
                         android:id="@+id/palette6"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -150,6 +157,7 @@
             </LinearLayout>
 
             <TextView
+                android:layout_margin="2dp"
                 android:id="@+id/paletteDominan"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
