@@ -7,7 +7,10 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 import android.view.View;
 
@@ -37,8 +40,10 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setTitle("Anlette");
         recyclerView = (RecyclerView) findViewById(R.id.list_palette);
-        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        SnapHelper helper = new LinearSnapHelper();
+        helper.attachToRecyclerView(recyclerView);
     }
 
     @Override
