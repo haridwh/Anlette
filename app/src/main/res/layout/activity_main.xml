@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.skday.anlette.activity.MainActivity">
 
     <data>
+
         <variable
             name="main"
-            type="com.example.skday.anlette.activity.MainActivity"/>
+            type="com.example.skday.anlette.activity.MainActivity" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
@@ -25,25 +27,25 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
-            
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
         </android.support.design.widget.AppBarLayout>
 
-            <android.support.v7.widget.RecyclerView
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:id="@+id/list_palette"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_palette"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:src="@android:drawable/ic_menu_camera"
-            app:layout_anchorGravity="bottom|left|end"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            android:onClick="@{main.takePicture}"/>
+        <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:src="@android:drawable/ic_menu_camera"-->
+        <!--app:layout_anchorGravity="bottom|left|end"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:onClick="@{main.takePicture}"/>-->
     </android.support.design.widget.CoordinatorLayout>
 
 </layout>

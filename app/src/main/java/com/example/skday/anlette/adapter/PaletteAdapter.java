@@ -1,14 +1,20 @@
 package com.example.skday.anlette.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.skday.anlette.R;
+import com.example.skday.anlette.activity.ZoomActivity;
+import com.example.skday.anlette.model.AnlPhoto;
 
 import java.util.List;
 
@@ -18,7 +24,7 @@ import java.util.List;
 
 public class PaletteAdapter extends RecyclerView.Adapter<PaletteAdapter.ViewHolder> {
 
-    private List<Bitmap> listPalette;
+    private List<AnlPhoto> listPalette;
     private Context context;
 
     @Override
@@ -29,9 +35,17 @@ public class PaletteAdapter extends RecyclerView.Adapter<PaletteAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.palette = listPalette.get(position);
-        holder.pallet.setImageBitmap(holder.palette);
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        Bitmap img = listPalette.get(position).getBitmap();
+        holder.pallet.setImageBitmap(img);
+        holder.pallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ZoomActivity.class);
+                intent.putExtra("PHOTO_NAME", listPalette.get(position).getName());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -45,7 +59,6 @@ public class PaletteAdapter extends RecyclerView.Adapter<PaletteAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView pallet;
-        Bitmap palette;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -53,7 +66,7 @@ public class PaletteAdapter extends RecyclerView.Adapter<PaletteAdapter.ViewHold
         }
     }
 
-    public PaletteAdapter (Context context, List<Bitmap> listPalette){
+    public PaletteAdapter (Context context, List<AnlPhoto> listPalette){
         this.context = context;
         this.listPalette = listPalette;
     }
